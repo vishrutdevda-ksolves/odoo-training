@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+        <!-- Form View for Class -->
+        <record id="view_form_class" model="ir.ui.view">
+            <field name="name">school.class.form</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <form string="Class">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="class_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Class -->
+        <record id="view_tree_class" model="ir.ui.view">
+            <field name="name">school.class.tree</field>
+            <field name="model">school.class</field>
+            <field name="arch" type="xml">
+                <tree string="Classes">
+                    <field name="name" />
+                    <field name="class_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open the Class views -->
+        <record id="action_class" model="ir.actions.act_window">
+            <field name="name">Classes</field>
+            <field name="res_model">school.class</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+
+
+
+</odoo>

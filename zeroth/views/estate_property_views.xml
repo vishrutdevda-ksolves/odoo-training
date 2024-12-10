@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    
+    <record id="new_real_estate_tree" model="ir.ui.view">
+        <field name="name">new.real.estate.tree</field>
+        <field name="model">new.real.estate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="title"/>
+                <field name="postcode"/>
+                <field name="bedrooms"/>
+                <field name="living_area"/>
+                <field name="expected_price"/>
+                <field name="selling_price"/>
+                <field name="date_availability"/>
+            </tree>
+        </field>
+    </record>
+
+
+    <record id="new_real_estate_form" model="ir.ui.view">
+        <field name="name">new.real.estate.form</field>
+        <field name="model">new.real.estate</field>
+        <field name="arch" type="xml">
+            <form>
+
+
+
+                <sheet>
+                    <h1>
+                        <field name="title"/>
+
+                    </h1>
+
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="property_type_id"/>
+                            <field name="postcode"/>
+                            <field name="date_availability"/>
+                        </group>
+                        <group>
+                            <field name="expected_price"/>
+                            <field name="selling_price"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Description">
+                            <group>
+                                <field name="description"/>
+                                <field name="bedrooms"/>
+                                <field name="living_area"/>
+                                <field name="fcades"/>
+                                <field name="garage"/>
+                                <field name="garden"/>
+                                <field name="garden_area"/>
+                                <field name="garden_orientation"/>
+
+                            </group>
+
+                        </page>
+                        <page string="other Information">
+                            <group>
+                                <field name="salesperson_id"/>
+                                <field name="buyer_id"/>
+
+                            </group>
+
+                        </page>
+                    </notebook>
+
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+<!--    <record id="estate_property_search_view" model="ir.ui.view">-->
+<!--        <field name="name">new.real.estate.search</field>-->
+<!--        <field name="model">new.real.estate</field>-->
+<!--        <field name="arch" type="xml">-->
+<!--            <search>-->
+
+<!--                <field name="title" string="Title"/>-->
+<!--                <field name="postcode" string="Postcode"/>-->
+<!--                <field name="bedrooms" string="Bedrooms"/>-->
+
+<!--                <field name="expected_price" string="Expected Price"/>-->
+<!--                <field name="selling_price" string="Selling Price"/>-->
+
+
+<!--                <filter name="state_filter" string="State">-->
+<!--                    <filter string="New" domain="[('state', '=', 'new')]"/>-->
+<!--                    <filter string="Offer Received" domain="[('state', '=', 'offer_received')]"/>-->
+<!--                    <filter string="Offer Accepted" domain="[('state', '=', 'offer_accepted')]"/>-->
+<!--                    <filter string="Sold" domain="[('state', '=', 'sold')]"/>-->
+<!--                    <filter string="Canceled" domain="[('state', '=', 'canceled')]"/>-->
+<!--                </filter>-->
+<!--                <field name="date_availability" string="Date Availability"/>-->
+<!--                <group string="Group By">-->
+<!--                    <group name="group_postcode" string="Postcode">-->
+<!--                        <field name="postcode"/>-->
+<!--                    </group>-->
+<!--                </group>-->
+<!--            </search>-->
+<!--        </field>-->
+<!--    </record>-->
+
+    <record id="action_new_realEstate" model="ir.actions.act_window">
+        <field name="name">New Estate Model</field>
+        <field name="res_model">new.real.estate</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <menuitem id="menu_new_real-estate" name="New Real Estate" action="action_new_realEstate"/>
+</odoo>

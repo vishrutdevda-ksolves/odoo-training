@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id="view_invoice_form" model="ir.ui.view">
+        <field name="name">account.move.form.inherit.analytic.mixin</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+
+            <xpath expr="//field[@name='invoice_line_ids']" position="after">
+                <tree >
+                    <field name="product_id"/>
+                    <field name="quantity"/>
+                    <field name="description"/>
+                </tree>
+            </xpath>
+        </field>
+    </record>
+</odoo>

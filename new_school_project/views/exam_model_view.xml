@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+        <!-- Form View for Exam -->
+        <record id="view_form_exam" model="ir.ui.view">
+            <field name="name">school.exam.form</field>
+            <field name="model">school.exam</field>
+            <field name="arch" type="xml">
+                <form string="Exam">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="class_subject_id" />
+                            <field name="exam_date" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Exam -->
+        <record id="view_tree_exam" model="ir.ui.view">
+            <field name="name">school.exam.tree</field>
+            <field name="model">school.exam</field>
+            <field name="arch" type="xml">
+                <tree string="Exams">
+                    <field name="name" />
+                    <field name="class_subject_id" />
+                    <field name="exam_date" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open the Exam views -->
+        <record id="action_exam" model="ir.actions.act_window">
+            <field name="name">Exams</field>
+            <field name="res_model">school.exam</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- Menu item for Exams -->
+
+
+</odoo>

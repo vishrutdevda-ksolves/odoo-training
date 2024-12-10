@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+        <record id="view_form_class_subject" model="ir.ui.view">
+            <field name="name">school.class.subject.form</field>
+            <field name="model">school.class.subject</field>
+            <field name="arch" type="xml">
+                <form string="Class Subject">
+                    <sheet>
+                        <group>
+                            <field name="subject_id" />
+                            <field name="class_id" />
+                            <field name="max_marks" />
+                            <field name="division_id" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Class Subject -->
+        <record id="view_tree_class_subject" model="ir.ui.view">
+            <field name="name">school.class.subject.tree</field>
+            <field name="model">school.class.subject</field>
+            <field name="arch" type="xml">
+                <tree string="Class Subject">
+                    <field name="subject_id" />
+                    <field name="class_id" />
+                    <field name="max_marks" />
+                    <field name="division_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open Class Subject form -->
+        <record id="action_class_subject" model="ir.actions.act_window">
+            <field name="name">Class Subjects</field>
+            <field name="res_model">school.class.subject</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- Menu item for Class Subjects -->
+
+
+</odoo>

@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<odoo>
+
+
+
+        <record id="practice_practice_form" model="ir.ui.view">
+            <field name="name">practice.practice.form</field>
+            <field name="model">practice.practice</field>
+            <field name="arch" type="xml">
+                <form>
+                    <header>
+
+                        <button type="object" class="btn btn-primary" name="action_open_product_form" string="Product"/>
+                        <button type="object" class="btn btn-primary" name="action_confirm_form" string="Confirm"/>
+                        <button type="object" class="btn btn-primary" name="action_ongoing_form" string="Ongoing" invisible="status!='confirm'"/>
+                        <button type="object" class="btn btn-primary" name="action_sold_form" string="Sold" invisible="status!='confirm'"/>
+                        <button type="object" class="btn btn-primary" name="action_canceled_form" string="Canceled"/>
+                        <field name="status" widget="statusbar" />
+                    </header>
+                    <sheet>
+                        <h1>
+                            <field name="seq_num"/>
+                        </h1>
+                            <group>
+<!--                        <div class="row">-->
+<!--                            <div class="col-8">-->
+                                <group>
+                                    <field name="name"/>
+
+                                    <field name="description"/>
+                                    <field name="postcode"/>
+                                    <field name="date_availability"/>
+                                    <field name="sales_person"/>
+                                    <field name="offer_num_ids"/>
+                                    <field name="total_area"/>
+                                    <field name="price_per_sqft"/>
+                                    <field name="total_price" />
+                                </group>
+<!--                            </div>-->
+<!--                            <div class="col-6">-->
+                                <group>
+                                    <field name="image" widget="image"
+                                           class="oe_avatar" style="max-width: 200px; max-height: 200px;"/>
+                                    <field name="expected_price"/>
+                                    <field name="selling_price"/>
+                                    <field name="bedrooms"/>
+                                    <field name="living_area"/>
+                                    <field name="tag_ids" widget="many2many_tags"/>
+                                    <field name="date_time_field"/>
+
+                                </group>
+<!--                            </div>-->
+<!--                            <div class="col-5">-->
+                                <group>
+                                    <field name="facades"/>
+                                    <field name="garage"/>
+                                    <field name="garden"/>
+                                    <field name="garden_area"/>
+                                    <field name="property_type_id"/>
+                                </group>
+                            </group>
+<!--                            </div>-->
+<!--                        </div>-->
+                        <notebook>
+                            <page string="Description">
+                                <group>
+                                    <field name="name"/>
+                                    <field name="description"/>
+                                    <field name="postcode"/>
+                                </group>
+                            </page>
+
+                            <page string="Other Info">
+                                <group>
+                                    <field name="expected_price"/>
+                                    <field name="selling_price"/>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+                </form>
+            </field>
+        </record>
+
+        <!-- Defining the Practice Tree View -->
+        <record id="practice_practice_tree" model="ir.ui.view">
+            <field name="name">practice.practice.tree</field>
+            <field name="model">practice.practice</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="seq_num"/>
+                    <field name="description" decoration-success="description=='Appartment'"/>
+                    <field name="postcode"/>
+
+                    <field name="bedrooms" decoration-success="bedrooms==5"/>
+                    <field name="living_area"/>
+                    <field name="expected_price"/>
+                    <field name="selling_price" width="150"/>
+                    <field name="date_availability" width="150"/>
+                    <field name="property_type_id"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- Defining the Practice Kanban View -->
+        <record id="practice_practice_kanban" model="ir.ui.view">
+            <field name="name">practice.practice.kanban</field>
+            <field name="model">practice.practice</field>
+            <field name="arch" type="xml">
+                <kanban>
+                    <field name="name"/>
+                    <field name="bedrooms"/>
+                    <field name="date_availability"/>
+                    <field name="garden"/>
+                    <field name="garage"/>
+                    <templates>
+                        <t t-name="kanban-box">
+                            <div class="oe_kanban_card">
+                                <div class="oe_kanban_details">
+                                    <strong>Name: </strong>
+                                    <field name="name"/>
+                                    <div style="height:25px"></div>
+                                    <strong>Bedrooms: </strong>
+                                    <field name="bedrooms"/>
+                                    <div style="height:25px"></div>
+                                    <strong>Validity Date: </strong>
+                                    <div style="height:25px"></div>
+                                    <field name="date_availability"/>
+                                    <strong>Garage: </strong>
+                                    <field name="garage"/>
+                                    <div style="height:25px"></div>
+                                    <strong>Garden: </strong>
+                                    <field name="garden"/>
+                                </div>
+                            </div>
+                        </t>
+                    </templates>
+                </kanban>
+            </field>
+        </record>
+
+        <!-- Defining the Action -->
+        <record id="action_practice_practice" model="ir.actions.act_window">
+            <field name="name">PracticeModel</field>
+            <field name="res_model">practice.practice</field>
+            <field name="view_mode">tree,form,kanban</field>
+        </record>
+
+        <!-- Defining the Menu -->
+        <menuitem id="menu_practice_practice" name="PracticeModel" action="action_practice_practice"/>
+
+</odoo>

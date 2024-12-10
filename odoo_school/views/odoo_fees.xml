@@ -1,0 +1,36 @@
+<odoo>
+    <record id="view_odoo_fees_form" model="ir.ui.view">
+        <field name="name">odoo.fees.form</field>
+        <field name="model">odoo.fees</field>
+        <field name="arch" type="xml">
+            <form string="Fees">
+                <group>
+                    <field name="month"/>
+                    <field name="amount"/>
+                    <field name="student_id"/>
+                </group>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_odoo_fees_tree" model="ir.ui.view">
+        <field name="name">odoo.fees.tree</field>
+        <field name="model">odoo.fees</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="month"/>
+                <field name="amount"/>
+                <field name="student_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_odoo_fees" model="ir.actions.act_window">
+        <field name="name">Fees</field>
+        <field name="res_model">odoo.fees</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Manage the fees of students.</p>
+        </field>
+    </record>
+
+</odoo>

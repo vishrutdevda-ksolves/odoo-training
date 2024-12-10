@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+        <!-- Form View for Division -->
+        <record id="view_form_division" model="ir.ui.view">
+            <field name="name">school.division.form</field>
+            <field name="model">school.division</field>
+            <field name="arch" type="xml">
+                <form string="Division">
+                    <sheet>
+                        <group>
+                            <field name="name" />
+                            <field name="class_id" />
+                        </group>
+                        <group>
+                            <field name="subjects" widget="one2many_list" context="{'default_division_id': active_id}" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Division -->
+        <record id="view_tree_division" model="ir.ui.view">
+            <field name="name">school.division.tree</field>
+            <field name="model">school.division</field>
+            <field name="arch" type="xml">
+                <tree string="Divisions">
+                    <field name="name" />
+                    <field name="class_id" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open the Division views -->
+        <record id="action_division" model="ir.actions.act_window">
+            <field name="name">Divisions</field>
+            <field name="res_model">school.division</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+</odoo>

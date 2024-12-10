@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <menuitem id="odoo_school_menu" name="Odoo School"/>
+    <menuitem id="menu_class" name="Classes" parent="odoo_school_menu" action="action_odoo_class"/>
+    <menuitem id="menu_student" name="Students" parent="odoo_school_menu" action="action_odoo_student"/>
+    <menuitem id="menu_subject" name="Subjects" parent="odoo_school_menu" action="action_odoo_subject"/>
+    <menuitem id="menu_fees" name="Fees" parent="odoo_school_menu" action="action_odoo_fees" />
+</odoo>

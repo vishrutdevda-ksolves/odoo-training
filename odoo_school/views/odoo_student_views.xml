@@ -1,0 +1,46 @@
+<odoo>
+    <record id="view_odoo_student_form" model="ir.ui.view">
+        <field name="name">odoo.student.form</field>
+        <field name="model">odoo.student</field>
+        <field name="arch" type="xml">
+            <form string="Student">
+                <group>
+                    <field name="name"/>
+                    <field name="dob"/>
+                    <field name="contact_number"/>
+                    <field name="email"/>
+                    <field name="class_id"/>
+                </group>
+                <notebook>
+                    <page string="Subjects">
+                        <field name="subject_ids" widget="many2many_tags"/>
+                    </page>
+                    <page string="Fees">
+                        <field name="fee_ids" widget="one2many"/>
+                    </page>
+                </notebook>
+            </form>
+        </field>
+    </record>
+
+    <record id="view_odoo_student_tree" model="ir.ui.view">
+        <field name="name">odoo.student.tree</field>
+        <field name="model">odoo.student</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="name"/>
+                <field name="dob"/>
+                <field name="contact_number"/>
+                <field name="class_id"/>
+            </tree>
+        </field>
+    </record>
+    <record id="action_odoo_student" model="ir.actions.act_window">
+        <field name="name">Students</field>
+        <field name="res_model">odoo.student</field>
+        <field name="view_mode">tree,form</field>
+        <field name="help" type="html">
+            <p>Manage the students in your school system</p>
+        </field>
+    </record>
+</odoo>

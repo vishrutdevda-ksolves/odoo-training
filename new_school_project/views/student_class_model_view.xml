@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+        <!-- Form View for Student Class -->
+        <record id="view_form_student_class" model="ir.ui.view">
+            <field name="name">school.student.class.form</field>
+            <field name="model">school.student.class</field>
+            <field name="arch" type="xml">
+                <form string="Student Class">
+                    <sheet>
+                        <group>
+                            <field name="student_id" />
+                            <field name="class_id" />
+                        </group>
+                        <group>
+                            <field name="subjects" widget="one2many_list" context="{'default_class_id': active_id}" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for Student Class -->
+        <record id="view_tree_student_class" model="ir.ui.view">
+            <field name="name">school.student.class.tree</field>
+            <field name="model">school.student.class</field>
+            <field name="arch" type="xml">
+                <tree string="Student Classes">
+                    <field name="student_id" />
+                    <field name="class_id" />
+                    <field name="subjects" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open the Student Class views -->
+        <record id="action_student_class" model="ir.actions.act_window">
+            <field name="name">Student Classes</field>
+            <field name="res_model">school.student.class</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- Menu item for Student Classes -->
+
+
+</odoo>

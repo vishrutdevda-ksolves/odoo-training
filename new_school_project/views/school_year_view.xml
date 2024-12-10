@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+
+        <!-- Form View for School Year -->
+        <record id="view_form_school_year" model="ir.ui.view">
+            <field name="name">school.year.form</field>
+            <field name="model">school.year</field>
+            <field name="arch" type="xml">
+                <form string="School Year">
+                    <sheet>
+                        <group>
+                            <field name="start_date" />
+                            <field name="end_date" />
+                            <field name="is_current" readonly="1" />
+                        </group>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <!-- Tree View for School Year -->
+        <record id="view_tree_school_year" model="ir.ui.view">
+            <field name="name">school.year.tree</field>
+            <field name="model">school.year</field>
+            <field name="arch" type="xml">
+                <tree string="School Years">
+                    <field name="start_date" />
+                    <field name="end_date" />
+                    <field name="is_current" />
+                </tree>
+            </field>
+        </record>
+
+        <!-- Action to open the School Year views -->
+        <record id="action_school_year" model="ir.actions.act_window">
+            <field name="name">School Years</field>
+            <field name="res_model">school.year</field>
+            <field name="view_mode">tree,form</field>
+            <field name="target">current</field>
+        </record>
+
+        <!-- Menu item for School Years -->
+
+
+</odoo>

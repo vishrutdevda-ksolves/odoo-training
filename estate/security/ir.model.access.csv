@@ -1,0 +1,12 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+#access_real_estate,real_estate,model_real_estate,base.group_user,1,1,1,1
+access_property_real_estate,property_real_estate,model_property_real_estate,base.group_user,1,1,1,1
+access_property_tags,property_tags,model_property_tags,base.group_user,1,1,1,1
+access_property_area_area,property_area_area,model_property_area_area,base.group_user,1,1,1,1
+access_test_model_line,test_model_line,model_test_model_line,base.group_user,1,1,1,1
+access_test_model_line,test_model_line,model_test_model_line,base.group_user,1,1,1,1
+access_managers,access.real_estate,model_real_estate,estate.group_managers,1,1,1,1
+access_public_users,access.real_estate,model_real_estate,estate.group_public_users,1,0,0,0
+
+
+

@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <!-- Define the Form View -->
+    <record id="book_inventory" model="ir.ui.view">
+        <field name="name">books.inventory.form</field>
+        <field name="model">books.inventory</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <field name="fname"/>
+                        <field name="btype"/>
+                        <field name="bstory"/>
+                        <field name="bcharacters"/>
+                        <field name="date_of_publish"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <!-- Define the Tree View -->
+    <record id="book_inventory_tree" model="ir.ui.view">
+        <field name="name">books.inventory.tree</field>
+        <field name="model">books.inventory</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="fname"/>
+                <field name="btype"/>
+                <field name="bstory"/>
+                <field name="bcharacters"/>
+                <field name="date_of_publish"/>
+            </tree>
+        </field>
+    </record>
+
+    <!-- Define the Search View -->
+    <record id="book_inventory_search" model="ir.ui.view">
+        <field name="name">books.inventory.search</field>
+        <field name="model">books.inventory</field>
+        <field name="arch" type="xml">
+            <search>
+                <field name="fname"/>
+                <field name="btype"/>
+                <field name="bstory"/>
+                <field name="bcharacters"/>
+                <field name="date_of_publish"/>
+            </search>
+        </field>
+    </record>
+
+    <!-- Action for the views -->
+    <record id="action_books_inventory" model="ir.actions.act_window">
+        <field name="name">Books Inventory</field>
+        <field name="res_model">books.inventory</field>
+        <field name="view_mode">tree,form,search</field>
+    </record>
+
+    <!-- Menu item to trigger the action -->
+    <menuitem id="menu_books_inventory" name="Books Inventory" action="action_books_inventory"/>
+</odoo>

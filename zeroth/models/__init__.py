@@ -1,0 +1,1 @@
+from . import new_real_estate,real_property_type

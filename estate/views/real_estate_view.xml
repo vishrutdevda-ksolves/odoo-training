@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <record id ="real_estate_form" model="ir.ui.view">
+        <field name="name">real.estate.form</field>
+        <field name="model">real.estate</field>
+        <field name="arch" type ="xml">
+            <form>
+                <header>
+                    <button name="action_do_something" type="object" string="change the name"/>
+                    <button type="action" class="btn btn-info" name="%(account.action_account_moves_all)d" string="My Action"/>
+                    <button type="object" class="btn btn-warning" name="action_open_contact" string="Company contacts"/>
+
+                    <button type="object" class="btn btn-primary"  name="action_open_product_form" string="Product "/>
+                    <button type="action" class="btn btn-primary"  name="%(action_real_estate)d" string="Real Estate "/>
+
+
+
+
+
+                </header>
+
+                <sheet>
+                    <group>
+                        <field name="Fname"/>
+                        <field name="Bname"/>
+                        <field name="ptype_id"/>
+                        <field name="Parea"/>
+                        <field name="date_of_sell"/>
+                        <field name="tag_ids" widget="many2many_tags"/>
+                        <field name="property_area_ids" widget="one2many"/>
+                        <field name="area"/>
+                        <field name="Price_per_sqft"/>
+                        <field name="total_price"/>
+                        <field name="property_status"/>
+                        <field name="partner_id"/>
+                        <field name="has_garden"/>
+                        <field name="property_status"/>
+
+
+                        <field name="description"/>
+                        <field name="line_ids">
+                        <tree>
+                            <field name="model_id"/>
+                            <field name="field_1"/>
+                            <field name="field_2"/>
+                            <field name="field_3"/>
+
+                        </tree>
+                        </field>
+
+
+                    </group>
+                </sheet>
+                <div class="oe_chatter">
+                        <field name="message_follower_ids"/>
+                        <field name="activity_ids"/>
+                        <field name="message_ids"/>
+                    </div>
+            </form>
+
+        </field>
+
+    </record>
+    <record id="real_estate_tree" model ="ir.ui.view">
+        <field name="name">real.estate.tree</field>
+        <field name="model">real.estate</field>
+        <field name="arch" type="xml">
+            <tree>
+                <field name="Fname"/>
+                <field name="Bname"/>
+                <field name="Parea"/>
+                <field name="date_of_sell"/>
+                <field name="tag_ids" widget="many2many_tags"/>
+                <field name="property_area_ids"/>
+                <field name="property_status"/>
+                <field name="total_price"/>
+                <field name="has_garden"/>
+            </tree>
+        </field>
+    </record>
+    <record id ="real_estate_kanban" model="ir.ui.view">
+        <field name="name">real.estate.kanban</field>
+        <field name="model">real.estate</field>
+        <field name="arch" type ="xml">
+            <kanban default_group_by="Parea" >
+                <field name="Fname"/>
+                <field name="Bname"/>
+                <filed name="Parea"/>
+                <field name="property_area_ids"/>
+                <templates>
+                    <t t-name="kanban-box">
+                        <div class="oe_kanban_card">
+                            <div class="oe_kanban_details">
+                                <strong>First Name : </strong>
+                                <field name="Fname"/>
+                                <div style="height:25px"></div>
+                                <strong>Buyer Name : </strong>
+                                <field name="Bname"/>
+                                <div style="height:25px"></div>
+                                <strong>Property area : </strong>
+                                <div style="height:25px"></div>
+                                <field name="Parea"/>
+                                <strong> tag :</strong>
+                                <field name="tag_ids"/>
+                                <div style="height:25px"></div>
+                                <strong> Property Name Area :</strong>
+                                <field name="property_area_ids"/>
+                                <div style="height:25px"></div>
+                                <strong> Garden:</strong>
+                                <field name="has_garden"/>
+
+                            </div>
+                        </div>
+                    </t>
+                </templates>
+            </kanban>
+        </field>
+    </record>
+     <record id="action_real_estate" model="ir.actions.act_window">
+        <field name="name">RealEstate</field>
+        <field name="res_model">real.estate</field>
+        <field name="view_mode">tree,form,kanban</field>
+    </record>
+
+
+    <menuitem id="menu_real_estate" name="RealEstate" action="action_real_estate"/>
+
+
+</odoo>
+
+
+
+
+

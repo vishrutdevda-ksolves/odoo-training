@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<odoo>
+    <menuitem id="school_menu_project" name="School Information"/>
+    <menuitem id="menu_class_subject" name="Class Subjects" parent="school_menu_project" action="action_class_subject" />
+    <menuitem id="menu_exam" name="Exams" parent="school_menu_project"  action="action_exam" />
+    <menuitem id="menu_class" name="Classes" parent="school_menu_project" action="action_class" />
+    <menuitem id="menu_subject" name="Subjects" parent="school_menu_project" action="action_subject" />
+    <menuitem id="menu_division" name="Divisions" parent="school_menu_project" action="action_division" />
+    <menuitem id="menu_school_year" name="School Years" parent="school_menu_project" action="action_school_year" />
+    <menuitem id="menu_student_class" name="Student Classes" parent="school_menu_project" action="action_student_class" />
+    <menuitem id="menu_student_exam" name="Student Exams" parent="menu_exam" action="action_student_exam" />
+    <menuitem id="menu_student" name="Students" parent="school_menu_project" action="action_student" />
+    <menuitem id="menu_student_subject" name="Student Subjects" parent="school_menu_project"  action="action_student_subject" />
+</odoo>
+
+
+
+
+
+
+
+
+
+
